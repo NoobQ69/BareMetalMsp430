@@ -1,0 +1,30 @@
+#Generating source browse information for project AirPressureSensorBMP180
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.5\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.5\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.5\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build BMP180.pbi : index BMP180.xcl
+build delayMs.pbi : index delayMs.xcl
+build I2C_Master.pbi : index I2C_Master.xcl
+build main.pbi : index main.xcl
+build AirPressureSensorBMP180.pbd : link BMP180.pbi delayMs.pbi I2C_Master.pbi main.pbi
+build AirPressureSensorBMP180.pbw : browsedata AirPressureSensorBMP180.pbd
+
+

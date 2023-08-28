@@ -1,0 +1,8 @@
+E1
+RB->GR->BG->
+
+E2
+RG->GB->BR->
+
+E3
+R->RG->RGB->RG->R

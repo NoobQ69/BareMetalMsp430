@@ -1,0 +1,30 @@
+#Generating source browse information for project CommunicateWithLm35
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.5\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.5\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.5\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build delayMs.pbi : index delayMs.xcl
+build LM35_Reading.pbi : index LM35_Reading.xcl
+build main.pbi : index main.xcl
+build UART_Serial.pbi : index UART_Serial.xcl
+build CommunicateWithLm35.pbd : link delayMs.pbi LM35_Reading.pbi main.pbi UART_Serial.pbi
+build CommunicateWithLm35.pbw : browsedata CommunicateWithLm35.pbd
+
+

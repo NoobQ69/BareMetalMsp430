@@ -1,0 +1,152 @@
+#include "io430.h"
+
+#define IN1         P1OUT_bit.P5
+#define IN2         P2OUT_bit.P0
+#define IN3         P2OUT_bit.P1
+#define IN4         P2OUT_bit.P2
+
+//char wave_step[]={0x20,0x01,0x02,0x04}; 
+
+unsigned char waveStep[4][4] = {{1, 0, 0, 0},
+                                {0, 1, 0, 0},
+                                {0, 0, 1, 0},
+                                {0, 0, 0, 1}};
+
+unsigned char fullStep[4][4] = {{1, 1, 0, 0},
+                                {0, 1, 1, 0},
+                                {0, 0, 1, 1},
+                                {1, 0, 0, 1}};
+
+unsigned char halfStep[8][4] = {{1, 0, 0, 0},
+                                {1, 1, 0, 0},
+                                {0, 1, 0, 0},
+                                {0, 1, 1, 0},
+                                {0, 0, 1, 0},
+                                {0, 0, 1, 1},
+                                {0, 0, 0, 1},
+                                {1, 0, 0, 1}};
+//char full_step[]={0x03,0x06,0x0c,0x09};
+//char half_step[]= {0x09, 0x01, 0x03, 0x02, 0x06, 0x04, 0x0C, 0x08};
+int kq=1, dk=1, ch_quay=1;
+
+void inverseStep(unsigned char step[][4], unsigned int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    IN1 = step[i][1];
+    IN2 = step[i][2];
+    IN3 = step[i][3];
+    IN4 = step[i][4];
+    __delay_cycles(3000);
+  }
+}
+
+void reverseStep(unsigned char step[][4], unsigned int n)
+{
+  for (int i = n-1; i >= 0; i--)
+  {
+    IN1 = step[i][1];
+    IN2 = step[i][2];
+    IN3 = step[i][3];
+    IN4 = step[i][4];
+    __delay_cycles(3000);
+  }
+}
+
+
+void main( void )
+{
+  // Stop watchdog timer to prevent time out reset
+  WDTCTL = WDTPW + WDTHOLD;
+   
+  P2DIR |= BIT0 + BIT1 + BIT2;
+  P1DIR |= BIT5;
+  P2OUT = 0x00;
+ // P1IE = 0x7f;
+  P1IES = 0x7f;
+  P1IFG&=~0x7f;
+  __bis_SR_register(GIE);
+  
+  while(1)
+  {
+    // quay thuan wave
+    if((dk==1)&&(ch_quay==1)&&(kq==1))
+    {
+      inverseStep(waveStep, 4);
+    }
+    // quay nguoc wave
+    if((dk==1)&&(ch_quay==2)&&(kq==1))
+    {
+          reverseStep(waveStep, 4);
+//           P2OUT = wave_step[i];
+//           __delay_cycles(3000);
+    }
+      // quay thuan full
+    if((dk==1)&&(ch_quay==1)&&(kq==2))
+    {
+        inverseStep(fullStep, 4);
+//           P2OUT = full_step[i];
+//           __delay_cycles(3000);
+    }
+    // quay thuan full
+    if((dk==1)&&(ch_quay==2)&&(kq==2))
+    {
+      reverseStep(fullStep, 4);
+    }
+    // quay thuan half
+     if((dk==1)&&(ch_quay==1)&&(kq==3))
+    {
+      inverseStep(halfStep, 8);
+    }
+    // quay nguoc half
+     if((dk==1)&&(ch_quay==2)&&(kq==3))
+    {
+      inverseStep(halfStep, 8);
+    }   
+  }
+
+}
+#pragma vector = PORT1_VECTOR
+__interrupt void motor_step(void)
+{
+  if(P1IFG&0x01)
+  {
+     dk = 1;
+     P1IFG&=~0x01;
+  }
+  
+  if(P1IFG&0x02)
+  {
+     dk = 0;
+     P1IFG&=~0x02;
+  }
+  
+  if(P1IFG&0x04)
+  {
+     ch_quay = 1;
+     P1IFG&=~0x04;
+  }
+  
+  if(P1IFG&0x08)
+  {
+     ch_quay = 2;
+     P1IFG&=~0x08;
+  }
+  if(P1IFG&0x10)
+  {
+     kq = 1;
+     P1IFG&=~0x10;
+  }
+  
+  if(P1IFG&0x20)
+  {
+     kq = 2;
+     P1IFG&=~0x20;
+  }
+  
+  if(P1IFG&0x40)
+  {
+     kq = 3;
+     P1IFG&=~0x40;
+  }
+}

@@ -1,0 +1,8 @@
+Hx710B.pbi: E:\Msp430\Projects\AirPressureSensor\Hx710B.c \
+  E:\Msp430\Projects\AirPressureSensor/Hx710B.h \
+  E:\Msp430\Projects\AirPressureSensor/main.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\io430g2553.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  E:\Msp430\Projects\AirPressureSensor/port.h \
+  E:\Msp430\Projects\AirPressureSensor/delayMs.h \
+  E:\Msp430\Projects\AirPressureSensor/LED7.h

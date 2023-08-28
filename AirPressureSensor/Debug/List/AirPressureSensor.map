@@ -1,0 +1,780 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V6.6.2.104                                         #
+#                                                                              #
+#           Link time     =  11/May/2023  19:56:41                             #
+#           Target CPU    =  MSP430                                            #
+#           List file     =  E:\Msp430\Projects\AirPressureSensor\Debug\List\A #
+#                            irPressureSensor.map                              #
+#           Output file 1 =  E:\Msp430\Projects\AirPressureSensor\Debug\Exe\Ai #
+#                            rPressureSensor.hex                               #
+#                            Format: intel-standard                            #
+#           Output file 2 =  E:\Msp430\Projects\AirPressureSensor\Debug\Exe\Ai #
+#                            rPressureSensor.d43                               #
+#                            Format: ubrof10                                   #
+#                            UBROF version 10.0.6                              #
+#                            Using library modules for C-SPY (-rt)             #
+#           Command line  =  -f C:\Users\Admin\AppData\Local\Temp\EWE598.tmp   #
+#                            (E:\Msp430\Projects\AirPressureSensor\Debug\Obj\d #
+#                            elayMs.r43                                        #
+#                            E:\Msp430\Projects\AirPressureSensor\Debug\Obj\Hx #
+#                            710B.r43                                          #
+#                            E:\Msp430\Projects\AirPressureSensor\Debug\Obj\LE #
+#                            D7.r43                                            #
+#                            E:\Msp430\Projects\AirPressureSensor\Debug\Obj\ma #
+#                            in.r43                                            #
+#                            -o                                                #
+#                            E:\Msp430\Projects\AirPressureSensor\Debug\Exe\Ai #
+#                            rPressureSensor.d43                               #
+#                            -l                                                #
+#                            E:\Msp430\Projects\AirPressureSensor\Debug\List\A #
+#                            irPressureSensor.map                              #
+#                            -xms                                              #
+#                            "-IC:\Program Files (x86)\IAR Systems\Embedded Wo #
+#                            rkbench 8.5\430\LIB\\"                            #
+#                            -f                                                #
+#                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
+#                            bench 8.5\430\config\linker\lnk430g2553.xcl"      #
+#                            (-cmsp430 -QCODE_I=CODE_ID -QTLS16_I=TLS16_ID     #
+#                            -Z(CONST)INFO=1000-10FF                           #
+#                            -Z(CONST)INFOA=10C0-10FF                          #
+#                            -Z(CONST)INFOB=1080-10BF                          #
+#                            -Z(CONST)INFOC=1040-107F                          #
+#                            -Z(CONST)INFOD=1000-103F                          #
+#                            -Z(DATA)DATA16_I,DATA16_Z,DATA16_N,TLS16_I=0200-0 #
+#                            3FF                                               #
+#                            -Z(DATA)DATA16_HEAP+_DATA16_HEAP_SIZE             #
+#                            -Z(DATA)CODE_I -Z(DATA)CSTACK+_STACK_SIZE#        #
+#                            -Z(CONST)DATA16_C,DATA16_ID,TLS16_ID,DIFUNCT,CHEC #
+#                            KSUM=C000-FFDD                                    #
+#                            -Z(CODE)CSTART,ISR_CODE,CODE_ID=C000-FFDD         #
+#                            -P(CODE)CODE=C000-FFDD                            #
+#                            -Z(CONST)SIGNATURE=FFDE-FFDF                      #
+#                            -Z(CODE)INTVEC=FFE0-FFFF                          #
+#                            -Z(CODE)RESET=FFFE-FFFF) -D_STACK_SIZE=50 -rt     #
+#                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
+#                            bench 8.5\430\lib\dlib\dl430fn.r43"               #
+#                            -e_PrintfLarge=_Printf -e_ScanfLarge=_Scanf       #
+#                            -D_DATA16_HEAP_SIZE=50                            #
+#                            -Ointel-standard=E:\Msp430\Projects\AirPressureSe #
+#                            nsor\Debug\Exe\AirPressureSensor.hex              #
+#                            -s __program_start -D_DATA20_HEAP_SIZE=50)        #
+#                                                                              #
+#                           Copyright (C) 1987-2019 IAR Systems AB.            #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           C010  Relocatable, from module : ?cstart
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  __Heap_Handler             = Basic
+  __SystemLibrary            = DLib
+  __core                     = 430
+  __dlib_file_descriptor     = 0
+  __dlib_full_locale_support = 0
+  __double_size              = 32
+  __pic                      = no
+  __reg_r4                   = free
+  __reg_r5                   = free
+  __rt_version               = 3
+
+                ****************************************
+                *                                      *
+                *    AUTOMATIC SYMBOL REDIRECTIONS     *
+                *                                      *
+                ****************************************
+
+                  There are no automatic symbol redirections.
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  DEFINED ABSOLUTE ENTRIES
+    *************************************************************************
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?ABS_ENTRY_MOD
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _DATA20_HEAP_SIZE       0050 
+           _DATA16_HEAP_SIZE       0050 
+           _STACK_SIZE             0050 
+    *************************************************************************
+
+  FILE NAME : E:\Msp430\Projects\AirPressureSensor\Debug\Obj\delayMs.r43
+  PROGRAM MODULE, NAME : delayMs
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C7CC - C7DF (0x14 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           delayMs                 C7CC            AirPressureReading (main)
+                                                   Hx710B_Init (Hx710B)
+                                                   Hx710B_IsReady (Hx710B)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C7E0 - C7F1 (0x12 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           delayUs                 C7E0            Hx710B_Init (Hx710B)
+                                                   Hx710B_ReadAirPressure (Hx710B)
+
+    *************************************************************************
+
+  FILE NAME : E:\Msp430\Projects\AirPressureSensor\Debug\Obj\Hx710B.r43
+  PROGRAM MODULE, NAME : Hx710B
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA16_AN
+  Relative segment, address: 0028 - 0028 (0x1 bytes), align: 0
+  Segment part 1. ROOT        Intra module refs:   Hx710B_IsReady
+                                                   Hx710B_ReadAirPressure
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P2IN                 0028 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P2IN                    0028 
+           P2IN_bit                0028 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0029 - 0029 (0x1 bytes), align: 0
+  Segment part 2. ROOT        Intra module refs:   GPIOInit (main)
+                                                   Hx710B_Init
+                                                   Hx710B_ReadAirPressure
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P2OUT                0029 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P2OUT                   0029 
+           P2OUT_bit               0029 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C62C - C671 (0x46 bytes), align: 1
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Hx710B_Init             C62C            main (main)
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C6A4 - C6D3 (0x30 bytes), align: 1
+  Segment part 6.             Intra module refs:   Hx710B_ReadAirPressure
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Hx710B_IsReady          C6A4 
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C474 - C4F1 (0x7e bytes), align: 1
+  Segment part 4.             Intra module refs:   Hx710B_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Hx710B_ReadAirPressure
+                                   C474            AirPressureReading (main)
+               calls direct
+
+    *************************************************************************
+
+  FILE NAME : E:\Msp430\Projects\AirPressureSensor\Debug\Obj\LED7.r43
+  PROGRAM MODULE, NAME : LED7
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA16_AN
+  Relative segment, address: 0021 - 0021 (0x1 bytes), align: 0
+  Segment part 1. ROOT        Intra module refs:   IE74595_Out
+                                                   displayLED7Mpx4
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P1OUT                0021 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P1OUT                   0021 
+           P1OUT_bit               0021 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 0216 - 0216 (0x1 bytes), align: 0
+  Segment part 3.             Intra module refs:   displayLED7Mpx4
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           count                   0216 
+    -------------------------------------------------------------------------
+DATA16_I
+  Relative segment, address: 0200 - 020F (0x10 bytes), align: 0
+  Segment part 4.             Intra module refs:   displayLED7Mpx4
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Code7SegSource          0200 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C704 - C72F (0x2c bytes), align: 1
+  Segment part 6.             Intra module refs:   displayLED7Mpx4
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IE74595_Out             C704 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C3D8 - C473 (0x9c bytes), align: 1
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           displayLED7Mpx4         C3D8            Timer_A (main)
+               calls direct
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: C000 - C00F (0x10 bytes), align: 0
+  Segment part 5.             Intra module refs:   Code7SegSource
+
+    *************************************************************************
+
+  FILE NAME : E:\Msp430\Projects\AirPressureSensor\Debug\Obj\main.r43
+  PROGRAM MODULE, NAME : main
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA16_AN
+  Relative segment, address: 0056 - 0056 (0x1 bytes), align: 0
+  Segment part 1. ROOT        Intra module refs:   SystemClockConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DCOCTL               0056 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           DCOCTL                  0056 
+           DCOCTL_bit              0056 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0057 - 0057 (0x1 bytes), align: 0
+  Segment part 2. ROOT        Intra module refs:   SystemClockConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_BCSCTL1              0057 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           BCSCTL1                 0057 
+           BCSCTL1_bit             0057 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0058 - 0058 (0x1 bytes), align: 0
+  Segment part 3. ROOT        Intra module refs:   SystemClockConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_BCSCTL2              0058 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           BCSCTL2                 0058 
+           BCSCTL2_bit             0058 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0022 - 0022 (0x1 bytes), align: 0
+  Segment part 4. ROOT        Intra module refs:   GPIOInit
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P1DIR                0022 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P1DIR                   0022 
+           P1DIR_bit               0022 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 002A - 002A (0x1 bytes), align: 0
+  Segment part 6. ROOT        Intra module refs:   GPIOInit
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P2DIR                002A 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P2DIR                   002A 
+           P2DIR_bit               002A 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 002F - 002F (0x1 bytes), align: 0
+  Segment part 7. ROOT        Intra module refs:   GPIOInit
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P2REN                002F 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P2REN                   002F 
+           P2REN_bit               002F 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0160 - 0161 (0x2 bytes), align: 0
+  Segment part 8. ROOT        Intra module refs:   TimerAConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TA0CTL               0160 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           TA0CTL                  0160 
+           TA0CTL_bit              0160 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0162 - 0163 (0x2 bytes), align: 0
+  Segment part 9. ROOT        Intra module refs:   TimerAConfig
+                                                   Timer_A
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TA0CCTL0             0162 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           TA0CCTL0                0162 
+           TA0CCTL0_bit            0162 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0164 - 0165 (0x2 bytes), align: 0
+  Segment part 10. ROOT       Intra module refs:   TimerAConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TA0CCTL1             0164 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           TA0CCTL1                0164 
+           TA0CCTL1_bit            0164 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0172 - 0173 (0x2 bytes), align: 0
+  Segment part 11. ROOT       Intra module refs:   TimerAConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TA0CCR0                 0172 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0174 - 0175 (0x2 bytes), align: 0
+  Segment part 12. ROOT       Intra module refs:   TimerAConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TA0CCR1                 0174 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0120 - 0121 (0x2 bytes), align: 0
+  Segment part 13. ROOT       Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_WDTCTL               0120 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           WDTCTL                  0120 
+           WDTCTL_bit              0120 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 10FC - 10FC (0x1 bytes), align: 0
+  Segment part 14. ROOT       Intra module refs:   SystemClockConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CALDCO_8MHZ             10FC 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 10FD - 10FD (0x1 bytes), align: 0
+  Segment part 15. ROOT       Intra module refs:   SystemClockConfig
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CALBC1_8MHZ             10FD 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 0210 - 0211 (0x2 bytes), align: 1
+  Segment part 18.            Intra module refs:   AirPressureReading
+                                                   Timer_A
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P                       0210 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 0212 - 0215 (0x4 bytes), align: 1
+  Segment part 19.            Intra module refs:   AirPressureReading
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           result                  0212            Hx710B_Init (Hx710B)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C7B8 - C7CB (0x14 bytes), align: 1
+  Segment part 20.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SystemClockConfig       C7B8 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C7A2 - C7B7 (0x16 bytes), align: 1
+  Segment part 21.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GPIOInit                C7A2 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C76C - C789 (0x1e bytes), align: 1
+  Segment part 22.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TimerAConfig            C76C 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C570 - C5DF (0x70 bytes), align: 1
+  Segment part 23.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           AirPressureReading      C570 
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C74E - C76B (0x1e bytes), align: 1
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    C74E            Segment part 19 (?cstart)
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C730 - C74D (0x1e bytes), align: 1
+  Segment part 25.            Intra module refs:   Timer_A::??INTVEC 18
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Timer_A                 C730 
+               interrupt function
+               calls direct
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: FFE0 - FFF3 (0x14 bytes), align: 1
+  Segment part 16. ROOT 
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Timer_A::??INTVEC 18    FFF2 
+
+    *************************************************************************
+
+  FILE NAME : C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.5\430\lib\dlib\dl430fn.r43
+  LIBRARY MODULE, NAME : ?__dbg_break
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C83A - C83B (0x2 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __DebugBreak            C83A            __exit (?__exit)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C804 - C815 (0x12 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __exit                  C804            Segment part 6 (?_exit)
+                                                   _exit (?_exit)
+               calls direct
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?_exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C832, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _exit                   C832            exit (?exit)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C832 - C835 (0x4 bytes), align: 1
+  Segment part 6.             Intra module refs:   _exit
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?cstart
+
+  SEGMENTS IN THE MODULE
+  ======================
+CSTACK
+  Relative segment, address: 03B0, align: 1
+  Segment part 1.
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 0216, align: 1
+  Segment part 2.
+    -------------------------------------------------------------------------
+DATA16_I
+  Relative segment, address: 0200, align: 1
+  Segment part 3.
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: C000, align: 1
+  Segment part 4.
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: C010 - C013 (0x4 bytes), align: 1
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __program_start         C010            ?reset_vector (?reset_vector)
+                                                   Absolute parts (?ABS_ENTRY_MOD)
+           ?cstart_begin           C010 
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: C014 - C01F (0xc bytes), align: 1
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?cstart_init_zero       C014            P (main)
+                                                   count (LED7)
+                                                   result (main)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: C020 - C02F (0x10 bytes), align: 1
+  Segment part 15.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?cstart_init_copy       C020            Code7SegSource (LED7)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: C030 - C037 (0x8 bytes), align: 1
+  Segment part 19.            Intra module refs:   Segment part 9
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?cstart_call_main       C030 
+           ?cstart_end             C038 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?reset_vector
+
+  SEGMENTS IN THE MODULE
+  ======================
+RESET
+  Relative segment, address: FFFE - FFFF (0x2 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?reset_vector           FFFE            Segment part 9 (?cstart)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?Epilogue
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C826 - C82D (0x8 bytes), align: 1
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Epilogue3              C826            Hx710B_ReadAirPressure (Hx710B)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C836 - C839 (0x4 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           exit                    C836            Segment part 19 (?cstart)
+               calls direct
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?Cast32f32i
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C4F2 - C56F (0x7e bytes), align: 1
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _Cast32uto32f           C4F2            AirPressureReading (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : _Cast32fto32s
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C672 - C6A3 (0x32 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _Cast32fto32s           C672            AirPressureReading (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?FLT_Extract
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C5E0 - C62B (0x4c bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?FLT_Extract            C5E0            _Cast32fto32s (_Cast32fto32s)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : _Mul32f
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C2C8 - C3D7 (0x110 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _Mul32f                 C2C8            AirPressureReading (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : _Div32f
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C198 - C2C7 (0x130 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _Div32f                 C198            AirPressureReading (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : _Add32f
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C038 - C197 (0x160 bytes), align: 1
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _Add32f                 C038            AirPressureReading (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?DivMod816u
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C78A - C7A1 (0x18 bytes), align: 1
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?DivMod16u              C78A            ?DivMod16s (?DivMod816s)
+                                                   displayLED7Mpx4 (LED7)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?DivMod816s
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C6D4 - C703 (0x30 bytes), align: 1
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?DivMod16s              C6D4            displayLED7Mpx4 (LED7)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memcpy
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C7F2 - C803 (0x12 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memcpy                  C7F2            __data16_memcpy (?memzero)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memzero
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C816 - C825 (0x10 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __data16_memzero        C816            ?cstart_init_zero (?cstart)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: C82E - C831 (0x4 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __data16_memcpy         C82E            ?cstart_init_copy (?cstart)
+               calls direct
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+DATA16_AN                              0021 - 0022               2   rel    0
+                                       0028 - 002A               3 
+                                       002F - 002F               1 
+                                       0056 - 0058               3 
+                                       0120 - 0121               2 
+                                       0160 - 0165               6 
+                                       0172 - 0175               4 
+DATA16_I                               0200 - 020F              10   rel    1
+DATA16_Z                               0210 - 0216               7   rel    1
+CSTACK                                 03B0 - 03FF              50   rel    1
+DATA16_AN                              10FC - 10FD               2   rel    0
+DATA16_C                                  C000                       dse    0
+DATA16_ID                              C000 - C00F              10   rel    1
+CSTART                                 C010 - C037              28   rel    1
+<CODE> 1                               C038 - C83B             804   rel    1
+INTVEC                                 FFE0 - FFF3              14   com    1
+RESET                                  FFFE - FFFF               2   rel    1
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 2 114 bytes of CODE  memory
+   103 bytes of DATA  memory (+ 23 absolute )
+    16 bytes of CONST memory
+
+Errors: none
+Warnings: none
+

@@ -1,0 +1,9 @@
+UART_Serial.pbi: E:\Msp430\Projects\RGB_LED_Control\UART_Serial.c \
+  E:\Msp430\Projects\RGB_LED_Control/UART_Serial.h \
+  E:\Msp430\Projects\RGB_LED_Control/main.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\msp430g2553.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/in430.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  E:\Msp430\Projects\RGB_LED_Control/delayMs.h \
+  E:\Msp430\Projects\RGB_LED_Control/port.h \
+  E:\Msp430\Projects\RGB_LED_Control/ADC_Reading.h

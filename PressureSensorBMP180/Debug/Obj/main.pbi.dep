@@ -1,0 +1,9 @@
+main.pbi: E:\Msp430\Projects\PressureSensorBMP180\main.c \
+  E:\Msp430\Projects\PressureSensorBMP180/main.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\msp430g2553.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/in430.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  E:\Msp430\Projects\PressureSensorBMP180/delayMs.h \
+  E:\Msp430\Projects\PressureSensorBMP180/I2C_Master.h \
+  E:\Msp430\Projects\PressureSensorBMP180/LCD16X2.h \
+  E:\Msp430\Projects\PressureSensorBMP180/BMP180.h

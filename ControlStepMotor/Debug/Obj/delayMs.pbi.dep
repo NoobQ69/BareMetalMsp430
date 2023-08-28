@@ -1,0 +1,9 @@
+delayMs.pbi: E:\Msp430\Projects\ControlStepMotor\delayMs.c \
+  E:\Msp430\Projects\ControlStepMotor/delayMs.h \
+  E:\Msp430\Projects\ControlStepMotor/main.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\io430g2553.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  E:\Msp430\Projects\ControlStepMotor/port.h \
+  E:\Msp430\Projects\ControlStepMotor/buttons.h \
+  E:\Msp430\Projects\ControlStepMotor/stepperMotor.h \
+  E:\Msp430\Projects\ControlStepMotor/LED_7_Mpx2.h

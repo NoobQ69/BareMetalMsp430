@@ -1,0 +1,8 @@
+main.pbi: E:\Msp430\Projects\LCD_I2C_Communication\main.c \
+  E:\Msp430\Projects\LCD_I2C_Communication/main.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\msp430g2553.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/in430.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  E:\Msp430\Projects\LCD_I2C_Communication/delayMs.h \
+  E:\Msp430\Projects\LCD_I2C_Communication/I2C_Master.h \
+  E:\Msp430\Projects\LCD_I2C_Communication/LCD16X2.h
