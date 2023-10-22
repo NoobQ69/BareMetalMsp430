@@ -1,0 +1,8 @@
+main.pbi: E:\Msp430\Projects\LM35_UART\main.c \
+  E:\Msp430\Projects\LM35_UART/main.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\io430g2553.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  E:\Msp430\Projects\LM35_UART/delayMs.h \
+  E:\Msp430\Projects\LM35_UART/port.h \
+  E:\Msp430\Projects\LM35_UART/LM35_Reading.h \
+  E:\Msp430\Projects\LM35_UART/LED7.h

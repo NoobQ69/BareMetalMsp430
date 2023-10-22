@@ -1,7 +1,5 @@
 #include "I2C_Master.h"
 
-unsigned char err = 0;
-
 void I2C_MasterModeInit()
 {
   UCB0CTL1 |= UCSWRST;                         // Reset I2C
@@ -10,60 +8,66 @@ void I2C_MasterModeInit()
   UCB0BR0 = 10;                                // fSCL = SMCLK/10 = ~100kHz
   UCB0BR1 = 0;
   UCB0CTL1 &= ~UCSWRST;                         // Clear SW reset, resume operation
-  IE2 |= UCB0TXIE + UC0RXIE;
+  IE2 |= UCB0TXIE + UCB0RXIE;
 }
 
 void I2C_MasterStoreSlaveAddress(unsigned char slaveAddress, unsigned char slaveMode)
 {
+  UCB0CTL1 |= UCSWRST;    
   UCB0I2CSA = slaveAddress;
+  UCB0CTL1 &= ~UCSWRST;                 		// Clear SW reset, resume operation 
+  
   if (slaveMode == 10)
     UCB0CTL0 |= UCSLA10;
 }
 
-void I2C_MasterTransmitData(unsigned char *data, unsigned char length)
+unsigned char I2C_MasterTransmitData(unsigned char *data, unsigned char length, unsigned char registerAddress, unsigned char isWithRegisterAddr)
 {
   for (unsigned char i = 0; i < length; i++) 
   {
+    while (UCB0CTL1 & UCTXSTP);            // Wait until transmit is complete
     UCB0CTL1 |= UCTR + UCTXSTT;
-    while (!(IFG2 & UCB0TXIFG));                // Wait until transmit is complete
-    IFG2 &= ~UCB0TXIFG;                     // Clear USCI_B0 TX int flag
     
-    UCB0TXBUF = data[i];                        // Load data into transmit buffer
-    while (!(IFG2 & UCB0TXIFG));                // Wait until transmit is complete
-    
-    UCB0CTL1 |= UCTXSTP;                       // Set STOP condition bit
-    while (UCB0CTL1 & UCTXSTP);                // Wait until STOP condition is sent
-    IFG2 &= ~UCB0TXIFG;                     // Clear USCI_B0 TX int flag
-    
-    if (UCB0STAT & UCNACKIFG)                   // Check for NACK
+    if (isWithRegisterAddr)
     {
-      // Handle NACK here
-      err = 1;
-      break;
+      while (!(IFG2 & UCB0TXIFG));            // Wait until transmit is complete
+      if(UCB0STAT & UCNACKIFG) return UCB0STAT;	// If transmit error, return the state register
+      UCB0TXBUF = registerAddress; 
     }
+    
+    while (!(IFG2 & UCB0TXIFG));                // Wait until transmit is complete
+    if(UCB0STAT & UCNACKIFG) return UCB0STAT;	// If transmit error, return the state register
+    UCB0TXBUF = data[i];                        // Load data into transmit buffer
+    
+    while (!(IFG2 & UCB0TXIFG));                  // Wait until STOP condition is sent
+    if(UCB0STAT & UCNACKIFG) return UCB0STAT;	// If transmit error, return the state register
+    UCB0CTL1 |= UCTXSTP;                       // Set STOP condition bit
+    IFG2 &= ~UCB0TXIFG;                     // Clear USCI_B0 TX int flag
   }
+  return 0;
 }
 
-void I2C_MasterReceiveData(unsigned char *data, unsigned char length)
+unsigned char I2C_MasterReceiveData(unsigned char *data, unsigned char length, unsigned char registerAddress, unsigned char isWithRegisterAddr)
 {
-  for (unsigned char i = 0; i < length; i++) 
+  for (unsigned char i = 0; i < length; i++)
   {
-    UCB0CTL1 |= UCTXSTT;
-    while (!(IFG2 & UCB0RXIFG));                // Wait until transmit is complete
-    IFG2 &= ~UCB0TXIFG;                         // Clear USCI_B0 TX int flag
+    while (UCB0CTL1 & UCTXSTP);          	// Wait for I2C signal transmit successsfully
+    UCB0CTL1 |= UCTR + UCTXSTT;
     
-    data[i] = UCB0RXBUF;                        // Load data into transmit buffer
-    while (!(IFG2 & UCB0RXIFG));                // Wait until transmit is complete
-    
-    UCB0CTL1 |= UCTXSTP;                        // Set STOP condition bit
-    while (UCB0CTL1 & UCRXSTP);                 // Wait until STOP condition is sent
-    IFG2 &= ~UCB0RXIFG;                         // Clear USCI_B0 TX int flag
-    
-    if (UCB0STAT & UCNACKIFG)                   // Check for NACK
+    if (registerAddress)
     {
-      // Handle NACK here
-      err = 1;
-      break;
+      while (!(IFG2 & UCB0TXIFG));                // Wait until transmit is complete
+      UCB0TXBUF = registerAddress;                        // Clear USCI_B0 TX int flag 
     }
+
+    while (!(IFG2 & UCB0TXIFG));                // Wait until transmit is complete
+    
+    UCB0CTL1 &= ~UCTR;
+    UCB0CTL1 |= UCTXSTP;                        // Set STOP condition bit
+    IFG2 &= ~UCB0TXIFG;
+    
+    while (UCB0CTL1 & UCTXSTT);                 // Wait until STOP condition is sent
+    UCB0CTL1 |= UCTXSTP;
+    data[i] = UCB0RXBUF;                        // Load data into transmit buffer
   }
 }

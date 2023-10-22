@@ -5,57 +5,64 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\UART_Serial.__cstat.et</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\LED7.c</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\LED7.h</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\main.c</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\LM016.c</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\buttons.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\ADC_Reading.xcl</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\buttons.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\delayMs.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\effects.r43</file>
             <file>$PROJ_DIR$\buttons.h</file>
-            <file>$TOOLKIT_DIR$\inc\io430g2553.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\effects.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\UART_Serial.xcl</file>
             <file>$PROJ_DIR$\buttons.c</file>
+            <file>$PROJ_DIR$\effects.c</file>
+            <file>$PROJ_DIR$\effects.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\effects.xcl</file>
+            <file>$PROJ_DIR$\ADC_Reading.c</file>
+            <file>$PROJ_DIR$\delayMs.h</file>
+            <file>$PROJ_DIR$\ADC_Reading.h</file>
             <file>$PROJ_DIR$\port.h</file>
+            <file>$TOOLKIT_DIR$\inc\io430g2553.h</file>
+            <file>$PROJ_DIR$\main.h</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\UART_Serial.xcl</file>
             <file>$PROJ_DIR$\Debug\Obj\buttons.xcl</file>
             <file>$PROJ_DIR$\UART_Serial.c</file>
             <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\delayMs.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\RGB_LED_Control.pbd</file>
-            <file>$PROJ_DIR$\delayMs.h</file>
-            <file>$PROJ_DIR$\Debug\List\RGB_LED_Control.map</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-            <file>$PROJ_DIR$\Debug\Exe\RGB_LED_Control.hex</file>
-            <file>$PROJ_DIR$\Debug\Exe\RGB_LED_Control.ulp</file>
-            <file>$PROJ_DIR$\ADC_Reading.h</file>
-            <file>$PROJ_DIR$\effects.c</file>
-            <file>$PROJ_DIR$\UART_Serial.h</file>
             <file>$PROJ_DIR$\delayMs.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\UART_Serial.__cstat.et</file>
             <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$PROJ_DIR$\effects.h</file>
-            <file>$PROJ_DIR$\ADC_Reading.c</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\main.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\RGB_LED_Control.pbd</file>
+            <file>$PROJ_DIR$\UART_Serial.h</file>
             <file>$PROJ_DIR$\Debug\Obj\delayMs.__cstat.et</file>
             <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$PROJ_DIR$\Debug\Exe\RGB_LED_Control.ulp</file>
             <file>$PROJ_DIR$\Debug\Obj\UART_Serial.r43</file>
             <file>$PROJ_DIR$\Debug\Obj\ADC_Reading.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Exe\RGB_LED_Control.d43</file>
+            <file>$PROJ_DIR$\Debug\Exe\RGB_LED_Control.hex</file>
+            <file>$PROJ_DIR$\Debug\Obj\delayMs.r43</file>
+            <file>$PROJ_DIR$\Debug\List\RGB_LED_Control.map</file>
             <file>$PROJ_DIR$\Debug\Obj\ADC_Reading.r43</file>
+            <file>$PROJ_DIR$\Debug\Exe\RGB_LED_Control.d43</file>
             <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
             <file>$TOOLKIT_DIR$\inc\msp430g2553.h</file>
-            <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\ADC_Reading.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\effects.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\buttons.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\delayMs.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\main.h</file>
+            <file>$PROJ_DIR$\..\ControlEncoderMotorLCD\LM016.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
-                    <name>ULP430</name>
-                    <file> 16</file>
+                    <name>XLINK</name>
+                    <file> 42 40 38</file>
                 </tool>
                 <tool>
-                    <name>XLINK</name>
-                    <file> 30 13 15</file>
+                    <name>ULP430</name>
+                    <file> 35</file>
                 </tool>
             </outputs>
         </file>
@@ -64,40 +71,17 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 37</file>
+                    <file> 8</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 7</file>
+                    <file> 24</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 1 25 2 21 12 6 17 22</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\UART_Serial.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 28</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 4</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 0</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 19 25 33 9 21 12 6 17</file>
+                    <file> 11 21 20 29 17 19 18 14</file>
                 </tool>
             </inputs>
         </file>
@@ -106,40 +90,17 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 36</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 3</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 22 25 2 21 12 6 17 1</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\delayMs.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
                     <file> 10</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 38</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 26</file>
+                    <file> 15</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 12 25 2 21 6 17 1 22</file>
+                    <file> 14 21 20 29 17 19 18 11</file>
                 </tool>
             </inputs>
         </file>
@@ -148,21 +109,21 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 31</file>
+                    <file> 41</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 35</file>
+                    <file> 6</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 29</file>
+                    <file> 37</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 17 25 2 21 12 6 1 22</file>
+                    <file> 18 21 20 29 17 19 11 14</file>
                 </tool>
             </inputs>
         </file>
@@ -171,21 +132,67 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 14</file>
+                    <file> 34</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 27</file>
+                    <file> 33</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 39</file>
+                    <file> 5</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 25 2 21 12 6 17 1 22</file>
+                    <file> 21 20 29 17 19 18 11 14</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\UART_Serial.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 31 21 44 26 29 17 19 18</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\delayMs.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 39</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 9</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 17 21 20 29 19 18 11 14</file>
                 </tool>
             </inputs>
         </file>
@@ -194,13 +201,13 @@
             <outputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 13 15</file>
+                    <file> 40 38</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 34 31 37 10 36 14 32</file>
+                    <file> 7 41 8 39 10 34 43</file>
                 </tool>
             </inputs>
         </file>

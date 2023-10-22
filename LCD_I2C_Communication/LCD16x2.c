@@ -11,7 +11,8 @@ void lcd_send_cmd (unsigned char cmd)
   data_t[1] = data_u|0x08;  //en=0, rs=0
   data_t[2] = data_l|0x0C;  //en=1, rs=0
   data_t[3] = data_l|0x08;  //en=0, rs=0
-  I2C_MasterTransmitData(data_t, 4);
+  I2C_MasterTransmitData(data_t, 4, 0, 0);
+  delayMs(2);
 }
 
 void lcd_send_data (unsigned char data)
@@ -24,7 +25,8 @@ void lcd_send_data (unsigned char data)
   data_t[1] = data_u|0x09;  //en=0, rs=1
   data_t[2] = data_l|0x0D;  //en=1, rs=1
   data_t[3] = data_l|0x09;  //en=0, rs=1
-  I2C_MasterTransmitData(data_t, 4);
+  I2C_MasterTransmitData(data_t, 4, 0, 0);
+  delayMs(2);
 }
 
 void lcd_gotoxy(unsigned char row, unsigned char column)
@@ -61,16 +63,16 @@ void lcd_init (void)
 {
     // 4 bit initialisation
     delayMs(50);  // wait for >40ms
-    lcd_send_cmd (0x30);
+    lcd_send_cmd (0x33);
     delayMs(5);  // wait for >4.1ms
-    lcd_send_cmd (0x30);
+    lcd_send_cmd (0x33);
     delayMs(2);  // wait for >100us
-    lcd_send_cmd (0x30);
+    lcd_send_cmd (0x32);
     delayMs(10);
     lcd_send_cmd (0x20);  // 4bit mode
     delayMs(10);
 
-    // dislay initialisation
+    // dislay initialization
     lcd_send_cmd (0x28); // Function set --> DL=0 (4 bit mode), N = 1 (2 line display) F = 0 (5x8 characters)
     delayMs(2);
     lcd_send_cmd (0x08); //Display on/off control --> D=0,C=0, B=0  ---> display off
